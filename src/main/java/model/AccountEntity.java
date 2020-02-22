@@ -2,10 +2,15 @@ package model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "AccountCredentials")
-public class AccountCredentials {
+public class AccountEntity {
+
+    @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
+    private Set<OrderEntity> orders = new HashSet<>();       // i dont get this one
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +27,10 @@ public class AccountCredentials {
     private String secretAnswer;
 
 
-    protected AccountCredentials() {
+    protected AccountEntity() {
     }
 
-    public AccountCredentials(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer) {
+    public AccountEntity(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer) {
         this.id = id;
         this.email = email;
         this.password = password;

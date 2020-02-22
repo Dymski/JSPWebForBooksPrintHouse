@@ -4,7 +4,9 @@ import javax.persistence.*;
 import java.io.File;
 @Entity
 @Table(name = "OrderDetails")
-public class OrderDetails {
+public class OrderEntity {
+    @ManyToOne(cascade = {CascadeType.ALL})     //is this relation properly set?
+    private AccountEntity email;                // does email needs to be in constr and have getters and setters ?
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -30,9 +32,9 @@ public class OrderDetails {
     @Column(name = "FV")
     private File FV;                        // obsługa pliku ?
 
-    protected OrderDetails() {}
+    protected OrderEntity() {}
 
-    public OrderDetails(int id, String format, int pages, String paperType, int numberOfCopies, double priceInPLN, boolean foreignCurrency, String currencyChosen, double priceInForeignCurrency, String fvNumber, File FV) {
+    public OrderEntity(int id, String format, int pages, String paperType, int numberOfCopies, double priceInPLN, boolean foreignCurrency, String currencyChosen, double priceInForeignCurrency, String fvNumber, File FV) {
         this.id = id;
         this.format = format;
         this.pages = pages;

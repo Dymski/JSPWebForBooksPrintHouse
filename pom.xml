@@ -9,10 +9,10 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <modelVersion>4.0.0</modelVersion>
-  <name>bookPrintHouse Maven Webapp</name>
+  <name>bookPrintHouse</name>
 
   <!-- FIXME change it to the project's website -->
-  <url>http://www.bookPrintHouse.com</url>
+  <url></url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
