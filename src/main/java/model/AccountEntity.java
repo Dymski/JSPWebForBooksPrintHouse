@@ -1,17 +1,17 @@
 package model;
 
+import com.sun.tools.javac.util.List;
+
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "AccountCredentials")
 public class AccountEntity {
 
     @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-    private Set<OrderEntity> orders = new HashSet<>();       // i dont get this one
-
+    private ArrayList<OrderEntity> orders = new ArrayList<>();      // i dont get this one
+                                                                    // will it get all orders for same email as list ?
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
