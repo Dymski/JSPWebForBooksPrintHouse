@@ -1,20 +1,20 @@
 package model;
 
-import com.sun.tools.javac.util.List;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "AccountCredentials")
+@Table(name = "Account_Entity")
 public class AccountEntity {
 
-    @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-    private ArrayList<OrderEntity> orders = new ArrayList<>();      // i dont get this one
-                                                                    // will it get all orders for same email as list ?
+    @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
+    private Set<OrderEntity> orderEntities = new HashSet<>();
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int accountID;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -25,26 +25,42 @@ public class AccountEntity {
     private String secretQuestion;
     @Column(name = "secretAnswer")
     private String secretAnswer;
+    @Column(name = "companyName")
+    private String companyName;
+    @Column(name = "TaxIdentificationNumber")
+    private int taxIdentificationNumber;
 
 
-    protected AccountEntity() {
+
+    public AccountEntity() {
     }
 
-    public AccountEntity(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer) {
-        this.id = id;
+    public AccountEntity(int accountID, String email, String password, Date creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber) {
+        this.accountID = accountID;
         this.email = email;
         this.password = password;
         this.creationDate = creationDate;
         this.secretQuestion = secretQuestion;
         this.secretAnswer = secretAnswer;
+        this.companyName = companyName;
+        this.taxIdentificationNumber = taxIdentificationNumber;
+
     }
 
-    public int getId() {
-        return id;
+    public Set<OrderEntity> getOrderEntities() {
+        return orderEntities;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOrderEntities(Set<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
+    }
+
+    public int getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
     }
 
     public String getEmail() {
@@ -87,15 +103,20 @@ public class AccountEntity {
         this.secretAnswer = secretAnswer;
     }
 
-    @Override
-    public String toString() {
-        return "AccountCredentials{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", creationDate=" + creationDate +
-                ", secretQuestion='" + secretQuestion + '\'' +
-                ", secretAnswer='" + secretAnswer + '\'' +
-                '}';
+    public String getCompanyName() {
+        return companyName;
     }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public int getTaxIdentificationNumber() {
+        return taxIdentificationNumber;
+    }
+
+    public void setTaxIdentificationNumber(int taxIdentificationNumber) {
+        this.taxIdentificationNumber = taxIdentificationNumber;
+    }
+
 }

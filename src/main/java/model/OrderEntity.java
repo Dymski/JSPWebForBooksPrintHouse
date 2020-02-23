@@ -2,15 +2,19 @@ package model;
 
 import javax.persistence.*;
 import java.io.File;
+
 @Entity
-@Table(name = "OrderDetails")
+@Table(name = "OrderEntity")
 public class OrderEntity {
-    @ManyToOne(cascade = {CascadeType.ALL})     //is this relation properly set?
-    private AccountEntity email;                // does email needs to be in constr and have getters and setters ?
+
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name="accountID", nullable=false)
+    private AccountEntity accountEntity;
+
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    private int orderID;
     @Column(name = "format")
     private String format;
     @Column(name = "pages")
@@ -30,15 +34,16 @@ public class OrderEntity {
     @Column(name = "FvNumber")
     private String FvNumber;
     @Column(name = "FV")
-    private File FV;                            // obsługa pliku ?
+    private String FvPath;                            // obsługa pliku ?
                                                 // powinienem stworzyc @Embeddable FV class?
                                                 // jezeli chciałbym tam tylko wgrywać plik ?
                                                 // czy to raczej byłby string ze ścieżką ?
 
-    protected OrderEntity() {}
+    public OrderEntity() {}
 
-    public OrderEntity(int id, String format, int pages, String paperType, int numberOfCopies, double priceInPLN, boolean foreignCurrency, String currencyChosen, double priceInForeignCurrency, String fvNumber, File FV) {
-        this.id = id;
+    public OrderEntity(AccountEntity accountEntity, int orderID, String format, int pages, String paperType, int numberOfCopies, double priceInPLN, boolean foreignCurrency, String currencyChosen, double priceInForeignCurrency, String fvNumber, String FvPath) {
+        this.accountEntity = accountEntity;
+        this.orderID = orderID;
         this.format = format;
         this.pages = pages;
         this.paperType = paperType;
@@ -48,15 +53,24 @@ public class OrderEntity {
         this.currencyChosen = currencyChosen;
         this.priceInForeignCurrency = priceInForeignCurrency;
         FvNumber = fvNumber;
-        this.FV = FV;
+        this.FvPath = FvPath;
+
     }
 
-    public int getId() {
-        return id;
+    public AccountEntity getAccountEntity() {
+        return accountEntity;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAccountEntity(AccountEntity accountEntity) {
+        this.accountEntity = accountEntity;
+    }
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 
     public String getFormat() {
@@ -131,11 +145,12 @@ public class OrderEntity {
         FvNumber = fvNumber;
     }
 
-    public File getFV() {
-        return FV;
+    public String getFvPath() {
+        return FvPath;
     }
 
-    public void setFV(File FV) {
-        this.FV = FV;
+    public void setFvPath(String fvPath) {
+        FvPath = fvPath;
     }
+
 }
