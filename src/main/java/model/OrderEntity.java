@@ -3,7 +3,7 @@ package model;
 import javax.persistence.*;
 import java.io.File;
 @Entity
-@Table(name = "OrderDetails")
+@Table(name = "OrderEntity")
 public class OrderEntity {
     @ManyToOne(cascade = {CascadeType.ALL})     //is this relation properly set?
     private AccountEntity email;                // does email needs to be in constr and have getters and setters ?

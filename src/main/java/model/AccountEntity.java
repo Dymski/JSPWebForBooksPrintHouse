@@ -1,12 +1,10 @@
 package model;
 
-import com.sun.tools.javac.util.List;
-
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "AccountCredentials")
+@Table(name = "AccountEntity")
 public class AccountEntity {
 
     @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
@@ -25,18 +23,33 @@ public class AccountEntity {
     private String secretQuestion;
     @Column(name = "secretAnswer")
     private String secretAnswer;
+    @Column(name = "companyName")
+    private String companyName;
+    @Column(name = "TaxIdentificationNumber")
+    private int taxIdentificationNumber;
+
 
 
     protected AccountEntity() {
     }
 
-    public AccountEntity(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer) {
+    public AccountEntity(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.creationDate = creationDate;
         this.secretQuestion = secretQuestion;
         this.secretAnswer = secretAnswer;
+        this.companyName = companyName;
+        this.taxIdentificationNumber = taxIdentificationNumber;
+    }
+
+    public ArrayList<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<OrderEntity> orders) {
+        this.orders = orders;
     }
 
     public int getId() {
@@ -87,15 +100,20 @@ public class AccountEntity {
         this.secretAnswer = secretAnswer;
     }
 
-    @Override
-    public String toString() {
-        return "AccountCredentials{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", creationDate=" + creationDate +
-                ", secretQuestion='" + secretQuestion + '\'' +
-                ", secretAnswer='" + secretAnswer + '\'' +
-                '}';
+    public String getCompanyName() {
+        return companyName;
     }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public int getTaxIdentificationNumber() {
+        return taxIdentificationNumber;
+    }
+
+    public void setTaxIdentificationNumber(int taxIdentificationNumber) {
+        this.taxIdentificationNumber = taxIdentificationNumber;
+    }
+
 }
