@@ -1,18 +1,20 @@
 package model;
 
+import org.hibernate.criterion.Order;
+
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "AccountEntity")
+@Table(name = "Account_Entity")
 public class AccountEntity {
 
-    @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-    private ArrayList<OrderEntity> orders = new ArrayList<>();      // i dont get this one
-                                                                    // will it get all orders for same email as list ?
+    @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
+    private Set<OrderEntity> orderEntities = new HashSet<>();
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int accountID;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -30,11 +32,11 @@ public class AccountEntity {
 
 
 
-    protected AccountEntity() {
+    public AccountEntity() {
     }
 
-    public AccountEntity(int id, String email, String password, Date creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber) {
-        this.id = id;
+    public AccountEntity(int accountID, String email, String password, Date creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber) {
+        this.accountID = accountID;
         this.email = email;
         this.password = password;
         this.creationDate = creationDate;
@@ -42,22 +44,23 @@ public class AccountEntity {
         this.secretAnswer = secretAnswer;
         this.companyName = companyName;
         this.taxIdentificationNumber = taxIdentificationNumber;
+
     }
 
-    public ArrayList<OrderEntity> getOrders() {
-        return orders;
+    public Set<OrderEntity> getOrderEntities() {
+        return orderEntities;
     }
 
-    public void setOrders(ArrayList<OrderEntity> orders) {
-        this.orders = orders;
+    public void setOrderEntities(Set<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
     }
 
-    public int getId() {
-        return id;
+    public int getAccountID() {
+        return accountID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
     }
 
     public String getEmail() {

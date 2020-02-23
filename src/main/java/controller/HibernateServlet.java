@@ -3,6 +3,7 @@ package controller;
 
 
 import model.AccountEntity;
+import model.OrderEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -18,10 +19,11 @@ public class HibernateServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
+        Configuration configuration = new Configuration().configure("META-INF/hibernate.cfg.xml");
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties());
         configuration.addAnnotatedClass(AccountEntity.class);
+        configuration.addAnnotatedClass(OrderEntity.class);
         factory = configuration.buildSessionFactory(builder.build());
     }
 }
