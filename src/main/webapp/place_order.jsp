@@ -28,9 +28,10 @@
     <meta name="theme-color" content="#563d7c">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css"  type="text/css" media="all">
+    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -63,41 +64,36 @@
             }
         }
 
-        hr {
-            display: block;
-            position: relative;
-            padding: 0;
-            margin: 8px auto;
-            height: 0;
-            width: 100%;
-            max-height: 0;
-            font-size: 1px;
-            line-height: 0;
-            clear: both;
-            border: none;
-            border-top: 1px solid #aaaaaa;
-            border-bottom: 1px solid #ffffff;
-        }
+
     </style>
 
 
 </head>
 <body>
-<%@include file="navbar.jsp" %>
-<%@include file="carousel.jsp" %>
+<%@include file="components/navbar.jsp" %>
+<%@include file="components/carousel.jsp" %>
+<div class="container">
+    <br/>
+    <hr class="featurette-divider">
+    <br/>
 
-<br/> <hr> <br/>
-<div class="container" >
-    <h4>Please fill below form to place an order.</h4>
-</div> <br/>
-<%@include file="orderForm.jsp"%>
-<br/> <hr> <br/>
-
-<%@include file="footer.jsp"%>
+    <h3 align="center">Please fill below form to place an order.</h3>
+    <br/>
+    <%@include file="components/orderForm.jsp" %>
+    <br/>
+    <hr class="featurette-divider">
+</div>
+<%@include file="components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

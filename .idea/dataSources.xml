@@ -10,5 +10,15 @@
         <property name="serverTimezone" value="Europe/Warsaw" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="META-INF:hibernate.cfg.xml/Hibernate" uuid="e7202775-abe3-4e20-80c1-83ba0e110041">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/Dell/IdeaProjects/bookPrintHouse/src/main/resources/META-INF/hibernate.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/bookPrintHouseDB?useSSL=false&amp;serverTimezone=Europe/Warsaw</jdbc-url>
+    </data-source>
   </component>
 </project>

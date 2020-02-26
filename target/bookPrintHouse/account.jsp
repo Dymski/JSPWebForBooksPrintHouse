@@ -30,7 +30,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css"  type="text/css" media="all">
+    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -63,37 +63,23 @@
             }
         }
 
-        hr {
-            display: block;
-            position: relative;
-            padding: 0;
-            margin: 8px auto;
-            height: 0;
-            width: 100%;
-            max-height: 0;
-            font-size: 1px;
-            line-height: 0;
-            clear: both;
-            border: none;
-            border-top: 1px solid #aaaaaa;
-            border-bottom: 1px solid #ffffff;
-        }
+
     </style>
 
 
 </head>
 <body>
-<%@include file="navbar.jsp"%>
-<%@include file="carousel.jsp"%>
-<div class="container">
+<%@include file="components/navbar.jsp" %>
+<%@include file="components/carousel.jsp" %>
+<div class="container" >
+<br/>     <hr class="featurette-divider"> <br/>
+
+
+ <br/>
+
+<br/>     <hr class="featurette-divider">
 </div>
-<div class="container">
-</div>
-<div class="container">
-</div>
-<div class="container">
-</div>
-<%@include file="footer.jsp"%>
+<%@include file="components/footer.jsp"%>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

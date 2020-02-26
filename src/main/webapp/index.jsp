@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -68,32 +68,17 @@
             text-align: center;
         }
 
-        hr {
-            display: block;
-            position: relative;
-            padding: 0;
-            margin: 8px auto;
-            height: 0;
-            width: 100%;
-            max-height: 0;
-            font-size: 1px;
-            line-height: 0;
-            clear: both;
-            border: none;
-            border-top: 1px solid #aaaaaa;
-            border-bottom: 1px solid #ffffff;
-        }
+
     </style>
 
 
 </head>
 <body>
-<%@include file="navbar.jsp" %>
-<%@include file="carousel.jsp" %>
-<br/>
-<hr>
-<br/>
+<%@include file="components/navbar.jsp" %>
+<%@include file="components/carousel.jsp" %>
 <div class="container">
+<br/>     <hr class="featurette-divider"> <br/>
+
     <p><i>
         The term "book printing" is applied in historical context and the dictionaries describe it as the process for
         reproducing text and image,
@@ -135,16 +120,12 @@
 <div class="container" style="text-align-last: center">
     <a href="sign_in.jsp" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="text-align: center">Sign In</a>
     <a href="create_account.jsp" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" style="alignment: center">Create Account</a>
+
+
+<br/> <br/>
+    <hr class="featurette-divider">
 </div>
-<div class="container" >
-    <!-- Content here -->
-</div>
-<div class="container">
-    <!-- Content here -->
-</div>
-<br/>
-<hr>
-<%@include file="footer.jsp" %>
+<%@include file="components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -1,0 +1,12 @@
+nav {
+    background-color: black;
+    opacity: 0.9;
+}
+
+.py-2 {
+    color: gray;
+}
+.py-2:hover {
+    color: white;
+    text-decoration: none;
+}
