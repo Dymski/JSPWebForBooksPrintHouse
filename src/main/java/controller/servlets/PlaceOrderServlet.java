@@ -25,14 +25,13 @@ public class PlaceOrderServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         OrderDAO orderDAO = new OrderDAO();
         try{
             orderDAO.saveOrder(req, factory);
             req.getRequestDispatcher("/place_order_success.jsp").forward(req, resp);
         }
         catch (Exception e){
-            req.getRequestDispatcher("/somethingWentWrong.jsp").forward(req, resp);
+            req.getRequestDispatcher("/something_went_wrong.jsp").forward(req, resp);
         }
     }
 
