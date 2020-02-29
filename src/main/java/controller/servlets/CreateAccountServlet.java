@@ -45,6 +45,7 @@ public class CreateAccountServlet extends HttpServlet {
 
 
         session.save(accountEntity);
+        session.persist(accountEntity);
         transaction.commit();
         session.close();
 
