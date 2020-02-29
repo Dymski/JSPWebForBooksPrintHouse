@@ -1,4 +1,12 @@
-model\AccountEntity.class
-controller\HibernateServlet.class
 controller\PriceCalculator.class
 model\OrderEntity.class
+model\AccountDAO.class
+controller\servlets\SignInServlet.class
+controller\servlets\PlaceOrderServlet.class
+controller\servlets\ClientAccountServlet.class
+controller\servlets\ContactServlet.class
+model\OrderDAO.class
+controller\servlets\HibernateSqlServlet.class
+model\AccountEntity.class
+controller\servlets\CreateAccountServlet.class
+controller\servlets\AdminAccountServlet.class

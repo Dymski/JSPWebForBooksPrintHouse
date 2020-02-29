@@ -1,7 +1,6 @@
 package model;
 
 import javax.persistence.*;
-import java.io.File;
 
 @Entity
 @Table(name = "OrderEntity")
@@ -26,7 +25,7 @@ public class OrderEntity {
     @Column(name = "priceInPLN")
     private double priceInPLN;
     @Column(name = "foreignCurrency")
-    private boolean foreignCurrency;            //can boolean be used?
+    private boolean foreignCurrency;                    //can boolean be used?
     @Column(name = "currencyChosen")
     private String currencyChosen;
     @Column(name = "priceInForeignCurrency")
@@ -34,10 +33,7 @@ public class OrderEntity {
     @Column(name = "FvNumber")
     private String FvNumber;
     @Column(name = "FV")
-    private String FvPath;                            // obsługa pliku ?
-                                                // powinienem stworzyc @Embeddable FV class?
-                                                // jezeli chciałbym tam tylko wgrywać plik ?
-                                                // czy to raczej byłby string ze ścieżką ?
+    private String FvPath;                              //ścieżka do pliku
 
     public OrderEntity() {}
 
