@@ -77,7 +77,7 @@
     <hr class="featurette-divider">
     <br/>
     <h2>Your order details were incorrect.</h2>
-    <h3>Please try again by <a href="place_order">placing another order.</a>.</h3>
+    <h3>Please try again by <a href="">placing another order.</a>.</h3>
     <br/>
     <h4>If issue will re-occur, please <a href="contact">contact us.</a></h4>
     <br/>

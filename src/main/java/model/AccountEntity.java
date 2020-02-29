@@ -1,12 +1,13 @@
 package model;
 
 import javax.persistence.*;
+import javax.servlet.http.HttpSessionBindingListener;
 import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
 @Table(name = "account_entity")
-public class AccountEntity {
+public class AccountEntity implements HttpSessionBindingListener {
 
     @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
     private Set<OrderEntity> orderEntities = new HashSet<>();

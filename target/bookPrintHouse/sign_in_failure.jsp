@@ -78,7 +78,7 @@
     <br/>
     <h2>Incorrect email or password</h2>
     <h3>Forgot your password? <a href="forgot_password">Click here!</a></h3>
-    <h4>Otherwise, try to <a href="sign_in">Sign In</a> again.</h4>
+    <h4>Otherwise, try to <a href="">Sign In</a> again.</h4>
     <br/>
     <hr class="featurette-divider">
 

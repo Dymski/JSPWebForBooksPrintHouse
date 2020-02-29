@@ -70,8 +70,8 @@
 
 </head>
 <body>
-<%@include file="components/navbar.jsp" %>
-<%@include file="components/carousel.jsp" %>
+<%@include file="/components/navbar.jsp" %>
+<%@include file="/components/carousel.jsp" %>
 <div class="container">
     <br/>
     <hr class="featurette-divider">
@@ -79,7 +79,7 @@
     <div class="container form-group col-md-4">
         <h3 align="center">Please Sign In</h3>
         <br/>
-        <form method="post" action="sign_in">
+        <form method="post" action="">
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
@@ -99,7 +99,7 @@
     <hr class="featurette-divider">
 </div>
 
-<%@include file="components/footer.jsp" %>
+<%@include file="/components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

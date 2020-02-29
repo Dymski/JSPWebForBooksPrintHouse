@@ -80,7 +80,7 @@
 
     <h2>Account with this Email already exist</h2>
     <h3>Forgot your password? <a href="forgot_password">Click here!</a></h3>
-    <h4>Otherwise, try to <a href="create_account">create account </a>again.</h4>
+    <h4>Otherwise, try to <a href="">create account </a>again.</h4>
 
     <br/>
     <hr class="featurette-divider">

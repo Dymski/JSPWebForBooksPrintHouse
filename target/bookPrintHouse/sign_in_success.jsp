@@ -70,13 +70,19 @@
 
 </head>
 <body>
+
 <%@include file="components/navbar.jsp" %>
 <%@include file="components/carousel.jsp" %>
 <div class="container" style="text-align: center">
     <br/>
     <hr class="featurette-divider">
     <br/>
-    <h2>Sign in has been successful,</h2>
+    <h2><%
+        String uname=request.getParameter("email");
+        out.print("Welcome "+ uname);
+        session.setAttribute("sessname",uname);
+    %></h2>
+    <h2>Your sign in has been successful,</h2>
     <br/>
     <h3>You can now place an <a href="place_order">order.</a></h3>
     <br/>

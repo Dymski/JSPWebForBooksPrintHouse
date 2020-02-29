@@ -74,8 +74,8 @@
 
 </head>
 <body>
-<%@include file="components/navbar.jsp" %>
-<%@include file="components/carousel.jsp" %>
+<%@include file="/components/navbar.jsp" %>
+<%@include file="/components/carousel.jsp" %>
 <div class="container">
 <br/>     <hr class="featurette-divider"> <br/>
 
@@ -125,7 +125,7 @@
 <br/> <br/>
     <hr class="featurette-divider">
 </div>
-<%@include file="components/footer.jsp" %>
+<%@include file="/components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

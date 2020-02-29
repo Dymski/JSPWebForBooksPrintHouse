@@ -1,6 +1,6 @@
 package controller.servlets;
 
-import controller.account.AccountDAO;
+import model.AccountDAO;
 import model.AccountEntity;
 import model.OrderEntity;
 import org.hibernate.SessionFactory;
@@ -13,13 +13,12 @@ import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet(name = "SignIn", value = "/sign_in")
-public class SignInServlet extends HttpServlet {
+public class SignInServlet extends HttpServlet implements HttpSessionBindingListener {
     private SessionFactory factory;
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.getRequestDispatcher("/sign_in.jsp").forward(req, resp);
     }
 
@@ -31,12 +30,8 @@ public class SignInServlet extends HttpServlet {
         AccountEntity accountEntity = accountDAO.loginVerification(req, factory);
 
         if (accountEntity != null) {
-
-
-
             req.getRequestDispatcher("/sign_in_success.jsp").forward(req, resp);
         } else {
-
             req.getRequestDispatcher("/sign_in_failure.jsp").forward(req, resp);
         }
 

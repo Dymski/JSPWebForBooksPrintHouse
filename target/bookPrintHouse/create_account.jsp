@@ -83,7 +83,7 @@
         <h3 align="center">Create account</h3>
         <br/>
 
-        <form method="post" action="create_account"
+        <form method="post" action=""
         oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
             <div class="form-group">
                 <label for="email">Email address</label>
