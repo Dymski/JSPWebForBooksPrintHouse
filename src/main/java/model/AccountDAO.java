@@ -25,7 +25,8 @@ public class AccountDAO implements AccountDaoInterface {
 
 
         AccountEntity accountEntity = (AccountEntity) session.createQuery(
-                "select accountEntity from AccountEntity as accountEntity where accountEntity = :email ").setParameter("email", req.getParameter("email"))
+                "select accountEntity from AccountEntity as accountEntity where accountEntity.email = :email")
+                .setParameter("email", req.getParameter("email"))
                 .getSingleResult();
 
 

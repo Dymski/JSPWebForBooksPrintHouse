@@ -5,14 +5,14 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
-@Table(name = "Account_Entity")
+@Table(name = "account_entity")
 public class AccountEntity {
 
     @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
     private Set<OrderEntity> orderEntities = new HashSet<>();
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int accountID;
     @Column(name = "email")
     private String email;

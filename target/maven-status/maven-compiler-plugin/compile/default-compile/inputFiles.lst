@@ -7,6 +7,7 @@ C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\Clie
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\model\AccountEntity.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\HibernateSqlServlet.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\SignInServlet.java
+C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\model\AccountDaoInterface.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\PriceCalculator.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\model\OrderDAO.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\CreateAccountServlet.java
