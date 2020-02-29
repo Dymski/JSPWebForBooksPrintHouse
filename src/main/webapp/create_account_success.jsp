@@ -72,59 +72,16 @@
 <body>
 <%@include file="components/navbar.jsp" %>
 <%@include file="components/carousel.jsp" %>
-<div class="container">
+<div class="container" style="text-align: center">
+    <br/>
+    <hr class="featurette-divider">
+    <br/>
+    <h3>Account has been created successfully.</h3>
+    <h4>Please <a href="sign_in">Sign In.</a></h4>
+
     <br/>
     <hr class="featurette-divider">
 
-    <div class="container form-group col-md-4">
-
-        <br/>
-
-        <h3 align="center">Create account</h3>
-        <br/>
-
-        <form method="post" action="create_account">
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="email@example.com" name="email">
-                <small id="emailHelp" class="form-text text-muted">Use the email address you used to register the
-                    account.</small>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <div class="form-group">
-                <label for="companyName">Company name</label>
-                <input type="text" class="form-control" id="companyName" name="companyName">
-            </div>
-            <div class="form-group">
-                <label for="taxIdentificationNumber">Tax identification number</label>
-                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber">
-            </div>
-            <div class="form-group">
-                <label for="secretQuestion">Secret question</label>
-                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion">
-            </div>
-            <div class="form-group">
-                <label for="secretAnswer">Secret answer</label>
-                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="newsletterAgreement" name="newsletterAgreement">
-                <label class="form-check-label" for="newsletterAgreement">Sign me for newsletter.</label>
-            </div>
-            <br/>
-            <input type="submit" value="Create account" class="btn btn-primary">
-        </form>
-    </div>
-    <br/>
-
-    <br/>
-
-    <br/>
-    <hr class="featurette-divider">
 </div>
 <%@include file="components/footer.jsp" %>
 <!-- Optional JavaScript -->

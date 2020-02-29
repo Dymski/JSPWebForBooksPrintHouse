@@ -124,6 +124,7 @@
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
+            <th scope="col">AnotherCol</th>
         </tr>
         </thead>
         <tbody>

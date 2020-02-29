@@ -4,6 +4,7 @@ model\AccountDAO.class
 controller\servlets\SignInServlet.class
 controller\servlets\PlaceOrderServlet.class
 controller\servlets\ClientAccountServlet.class
+controller\servlets\HomeServlet.class
 controller\servlets\ContactServlet.class
 model\OrderDAO.class
 controller\servlets\HibernateSqlServlet.class
