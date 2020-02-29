@@ -30,7 +30,7 @@ public class PlaceOrderServlet extends HttpServlet {
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
-//        OrderEntity orderEntity = new OrderEntity();
+        OrderEntity orderEntity = new OrderEntity();
 
         System.out.println(req.getParameter("bookFormat"));
         System.out.println(req.getParameter("paperType"));
@@ -41,8 +41,8 @@ public class PlaceOrderServlet extends HttpServlet {
         System.out.println(req.getParameter("PaymentCurrency"));
 
 
-//        session.persist(orderEntity);
-//        session.save(orderEntity);
+        session.persist(orderEntity);
+        session.save(orderEntity);
         transaction.commit();
         session.close();
 

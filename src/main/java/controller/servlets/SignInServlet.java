@@ -9,9 +9,7 @@ import org.hibernate.cfg.Configuration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet(name = "SignIn", value = "/sign_in")
@@ -32,9 +30,10 @@ public class SignInServlet extends HttpServlet {
 
         if (accountEntity != null) {
 
+
+
             req.getRequestDispatcher("/sign_in_success.jsp").forward(req, resp);
         } else {
-
 
             req.getRequestDispatcher("/sign_in_failure.jsp").forward(req, resp);
         }

@@ -4,3 +4,14 @@ nav {
     color: #aaaaaa;
     text-decoration: none;
 }
+
+.my {
+    color: gray;
+    text-decoration: none;
+}
+
+.my:hover{
+    color: lightgray;
+    text-decoration: none;
+    text-shadow: gray;
+}

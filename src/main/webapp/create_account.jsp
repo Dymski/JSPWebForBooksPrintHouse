@@ -83,25 +83,36 @@
         <h3 align="center">Create account</h3>
         <br/>
 
-        <form method="post" action="create_account">
+        <form method="post" action="create_account"
+        oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="email@example.com" name="email">
-                <small id="emailHelp" class="form-text text-muted">Use the email address you used to register the
-                    account.</small>
+                       placeholder="email@example.com" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Re-type password</label>
+                <input type="password" class="form-control" id="password2" name="password2" required>
             </div>
             <div class="form-group">
                 <label for="companyName">Company name</label>
-                <input type="text" class="form-control" id="companyName" name="companyName">
+                <input type="text" class="form-control" id="companyName" name="companyName" required>
             </div>
             <div class="form-group">
-                <label for="companyName">Tax identification number</label>
-                <input type="number" class="form-control" id="TaxIdentificationNumber" name="TaxIdentificationNumber">
+                <label for="taxIdentificationNumber">Tax identification number</label>
+                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="secretQuestion">Secret question</label>
+                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion" required>
+            </div>
+            <div class="form-group">
+                <label for="secretAnswer">Secret answer</label>
+                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer" required>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="newsletterAgreement" name="newsletterAgreement">
@@ -115,20 +126,20 @@
     </div>
 </div>
 
-    <br/>
-    <hr class="container featurette-divider">
-    <br/>
-    <%@include file="components/footer.jsp" %>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+<br/>
+<hr class="container featurette-divider">
+<br/>
+<%@include file="components/footer.jsp" %>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>

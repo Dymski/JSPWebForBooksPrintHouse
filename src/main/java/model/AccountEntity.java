@@ -27,7 +27,7 @@ public class AccountEntity {
     @Column(name = "companyName")
     private String companyName;
     @Column(name = "TaxIdentificationNumber")
-    private int taxIdentificationNumber;
+    private String taxIdentificationNumber;
     @Column(name = "newsletterAgreement")
     private String newsletterAgreement;
 
@@ -36,7 +36,7 @@ public class AccountEntity {
     public AccountEntity() {
     }
 
-    public AccountEntity(int accountID, String email, String password, LocalDateTime creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber, String newsletterAgreement) {
+    public AccountEntity(int accountID, String email, String password, LocalDateTime creationDate, String secretQuestion, String secretAnswer, String companyName, String taxIdentificationNumber, String newsletterAgreement) {
         this.accountID = accountID;
         this.email = email;
         this.password = password;
@@ -113,11 +113,11 @@ public class AccountEntity {
         this.companyName = companyName;
     }
 
-    public int getTaxIdentificationNumber() {
+    public String getTaxIdentificationNumber() {
         return taxIdentificationNumber;
     }
 
-    public void setTaxIdentificationNumber(int taxIdentificationNumber) {
+    public void setTaxIdentificationNumber(String taxIdentificationNumber) {
         this.taxIdentificationNumber = taxIdentificationNumber;
     }
 

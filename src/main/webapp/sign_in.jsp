@@ -83,11 +83,11 @@
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="email@example.com" name="email">
+                       placeholder="email@example.com" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <br/>
             <input type="submit" value="Sign In" class="btn btn-primary">

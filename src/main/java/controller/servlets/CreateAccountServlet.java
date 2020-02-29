@@ -1,5 +1,6 @@
 package controller.servlets;
 
+import model.AccountDAO;
 import model.AccountEntity;
 import model.OrderEntity;
 import org.hibernate.Session;
@@ -30,26 +31,16 @@ public class CreateAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Session session = factory.openSession();
-        Transaction transaction = session.beginTransaction();
+        AccountDAO accountDAO = new AccountDAO();
 
-        AccountEntity accountEntity = new AccountEntity();
-        accountEntity.setEmail(req.getParameter("email"));
-        accountEntity.setPassword(req.getParameter("password"));
-        accountEntity.setCompanyName(req.getParameter("companyName"));
-        accountEntity.setCreationDate(LocalDateTime.now());
-        accountEntity.setTaxIdentificationNumber(Integer.parseInt(req.getParameter("taxIdentificationNumber")));
-        accountEntity.setSecretQuestion(req.getParameter("secretQuestion"));
-        accountEntity.setSecretAnswer(req.getParameter("secretAnswer"));
-        accountEntity.setNewsletterAgreement(req.getParameter("newsletterAgreement"));
+        if (accountDAO.createAccountVerification(req,factory) != null){
+            req.getRequestDispatcher("/create_account_success.jsp").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("/create_account_failure.jsp").forward(req, resp);
+        }
 
 
-        session.save(accountEntity);
-        session.persist(accountEntity);
-        transaction.commit();
-        session.close();
 
-        req.getRequestDispatcher("/create_account_success.jsp").forward(req, resp);
     }
 
     @Override

@@ -7,12 +7,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import javax.management.Query;
+import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 public class AccountDAO implements AccountDaoInterface {
-
-    AccountEntity accountEntity = new AccountEntity();
-    private SessionFactory factory;
 
     public AccountDAO() {
     }
@@ -20,25 +19,71 @@ public class AccountDAO implements AccountDaoInterface {
 
     @Override
     public AccountEntity loginVerification(HttpServletRequest req, SessionFactory factory) {
-
         Session session = factory.openSession();
 
+        AccountEntity accountEntity = null;
 
-        AccountEntity accountEntity = (AccountEntity) session.createQuery(
-                "select accountEntity from AccountEntity as accountEntity where accountEntity.email = :email")
-                .setParameter("email", req.getParameter("email"))
-                .getSingleResult();
+        try {
+            accountEntity = (AccountEntity) session.createQuery(
+                    "select accountEntity from AccountEntity as accountEntity where accountEntity.email = :email")
+                    .setParameter("email", req.getParameter("email"))
+                    .getSingleResult();
 
+            if (accountEntity.getPassword().equals(req.getParameter("password"))) {
+                session.close();
+                return accountEntity;
+            } else {
+                session.close();
+                return null;
+            }
 
-        System.out.println(accountEntity.getPassword());
-        System.out.println(req.getParameter("password"));
-        System.out.println(req.getParameter("email"));
-
-        if (accountEntity.getPassword().equals(req.getParameter("password"))) {
-
-            return accountEntity;
-        } else {
+        } catch (NoResultException e) {
+            session.close();
             return null;
         }
+
+
+    }
+
+    @Override
+    public AccountEntity createAccountVerification(HttpServletRequest req, SessionFactory factory) {
+        Session session = factory.openSession();
+
+        Object queryObject;
+
+        try {
+            queryObject = session.createQuery("select accountEntity from AccountEntity as accountEntity where accountEntity.email = :email")
+                    .setParameter("email", req.getParameter("email"))
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            queryObject = null;
+        }
+
+
+        if (queryObject == null) {
+            Transaction transaction = session.beginTransaction();
+            AccountEntity accountEntity = new AccountEntity();
+
+            accountEntity.setEmail(req.getParameter("email"));
+            accountEntity.setPassword(req.getParameter("password"));
+            accountEntity.setCompanyName(req.getParameter("companyName"));
+            accountEntity.setCreationDate(LocalDateTime.now());
+            accountEntity.setTaxIdentificationNumber(req.getParameter("taxIdentificationNumber"));
+            accountEntity.setSecretQuestion(req.getParameter("secretQuestion"));
+            accountEntity.setSecretAnswer(req.getParameter("secretAnswer"));
+            accountEntity.setNewsletterAgreement(req.getParameter("newsletterAgreement"));
+
+            session.save(accountEntity);
+            session.persist(accountEntity);
+            transaction.commit();
+            session.close();
+
+            return accountEntity;
+
+        } else {
+            session.close();
+            return null;
+        }
+
     }
 }

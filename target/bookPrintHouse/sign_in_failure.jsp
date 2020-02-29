@@ -76,9 +76,9 @@
     <br/>
     <hr class="featurette-divider">
     <br/>
-    <h2>Sign in has been unsuccessful,</h2>
-    <br/>
-    <h3><a href="sign_in">Please try again</a></h3>
+    <h2>Incorrect email or password</h2>
+    <h3>Forgot your password? <a href="forgot_password">Click here!</a></h3>
+    <h4>Otherwise, try to <a href="sign_in">Sign In</a> again.</h4>
     <br/>
     <hr class="featurette-divider">
 

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface AccountDaoInterface {
 
-    public AccountEntity loginVerification(HttpServletRequest req, SessionFactory factory);
+    AccountEntity loginVerification(HttpServletRequest req, SessionFactory factory);
+    AccountEntity createAccountVerification(HttpServletRequest req, SessionFactory factory);
 
 }
