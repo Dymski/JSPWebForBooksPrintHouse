@@ -1,12 +1,17 @@
 nav {
     background-color: black;
-    opacity: 0.9;
+    opacity: 90%;
+    color: #aaaaaa;
+    text-decoration: none;
 }
 
-.py-2 {
+.my {
     color: gray;
-}
-.py-2:hover {
-    color: white;
     text-decoration: none;
+}
+
+.my:hover{
+    color: lightgray;
+    text-decoration: none;
+    text-shadow: gray;
 }

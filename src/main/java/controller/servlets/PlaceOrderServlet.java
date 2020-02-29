@@ -32,6 +32,16 @@ public class PlaceOrderServlet extends HttpServlet {
 
         OrderEntity orderEntity = new OrderEntity();
 
+        System.out.println(req.getParameter("bookFormat"));
+        System.out.println(req.getParameter("paperType"));
+        System.out.println(Integer.parseInt(req.getParameter("numberOfCopies")));
+        System.out.println(Integer.parseInt(req.getParameter("blackAndWhitePages")));
+        System.out.println(Integer.parseInt(req.getParameter("colorPages")));
+        System.out.println(req.getParameter("Invoice"));
+        System.out.println(req.getParameter("PaymentCurrency"));
+
+
+        session.persist(orderEntity);
         session.save(orderEntity);
         transaction.commit();
         session.close();

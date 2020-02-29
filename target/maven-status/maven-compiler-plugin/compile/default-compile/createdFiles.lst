@@ -1,3 +1,4 @@
+model\AccountDaoInterface.class
 controller\PriceCalculator.class
 model\OrderEntity.class
 model\AccountDAO.class

@@ -83,49 +83,52 @@
         <h3 align="center">Create account</h3>
         <br/>
 
-        <form method="post" action="create_account">
+        <form method="post" action="create_account"
+        oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="email@example.com" name="email">
-                <small id="emailHelp" class="form-text text-muted">Use the email address you used to register the
-                    account.</small>
+                       placeholder="email@example.com" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Re-type password</label>
+                <input type="password" class="form-control" id="password2" name="password2" required>
             </div>
             <div class="form-group">
                 <label for="companyName">Company name</label>
-                <input type="text" class="form-control" id="companyName" name="companyName">
+                <input type="text" class="form-control" id="companyName" name="companyName" required>
             </div>
             <div class="form-group">
                 <label for="taxIdentificationNumber">Tax identification number</label>
-                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber">
+                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber" required>
             </div>
             <div class="form-group">
                 <label for="secretQuestion">Secret question</label>
-                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion">
+                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion" required>
             </div>
             <div class="form-group">
                 <label for="secretAnswer">Secret answer</label>
-                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer">
+                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer" required>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="newsletterAgreement" name="newsletterAgreement">
-                <label class="form-check-label" for="newsletterAgreement">Sign me for newsletter.</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="newsletterAgreement" name="newsletterAgreement">
+                <label class="form-check-label" for="newsletterAgreement">
+                    Sign me for newsletter!
+                </label>
             </div>
             <br/>
-            <input type="submit" value="Create account" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
-    <br/>
-
-    <br/>
-
-    <br/>
-    <hr class="featurette-divider">
 </div>
+
+<br/>
+<hr class="container featurette-divider">
+<br/>
 <%@include file="components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -5,14 +5,14 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
-@Table(name = "Account_Entity")
+@Table(name = "account_entity")
 public class AccountEntity {
 
     @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
     private Set<OrderEntity> orderEntities = new HashSet<>();
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int accountID;
     @Column(name = "email")
     private String email;
@@ -27,7 +27,7 @@ public class AccountEntity {
     @Column(name = "companyName")
     private String companyName;
     @Column(name = "TaxIdentificationNumber")
-    private int taxIdentificationNumber;
+    private String taxIdentificationNumber;
     @Column(name = "newsletterAgreement")
     private String newsletterAgreement;
 
@@ -36,7 +36,7 @@ public class AccountEntity {
     public AccountEntity() {
     }
 
-    public AccountEntity(int accountID, String email, String password, LocalDateTime creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber, String newsletterAgreement) {
+    public AccountEntity(int accountID, String email, String password, LocalDateTime creationDate, String secretQuestion, String secretAnswer, String companyName, String taxIdentificationNumber, String newsletterAgreement) {
         this.accountID = accountID;
         this.email = email;
         this.password = password;
@@ -113,11 +113,11 @@ public class AccountEntity {
         this.companyName = companyName;
     }
 
-    public int getTaxIdentificationNumber() {
+    public String getTaxIdentificationNumber() {
         return taxIdentificationNumber;
     }
 
-    public void setTaxIdentificationNumber(int taxIdentificationNumber) {
+    public void setTaxIdentificationNumber(String taxIdentificationNumber) {
         this.taxIdentificationNumber = taxIdentificationNumber;
     }
 

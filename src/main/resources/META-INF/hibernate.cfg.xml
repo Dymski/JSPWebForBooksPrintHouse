@@ -13,7 +13,7 @@
         <property name="connection.password">polpol13</property> <!-- UPDATED -->
 
         <!-- pula połączeń JDBC(dostarczana przez Hibernate - nie stosować w środowisku produkcyjnym!) -->
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">2</property>
 
         <!-- wyświetlamy na konsolę wszystkie zapytania SQL, które wywołuje dla nas Hibernate -->
         <property name="show_sql">true</property>

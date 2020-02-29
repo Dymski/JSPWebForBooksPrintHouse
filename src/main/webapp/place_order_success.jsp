@@ -78,7 +78,8 @@
     <br/>
     <h2>Your order has been submitted.</h2>
     <h3>Order details.</h3>
-    <h4>Place another order<a href="place_order">order</a></h4>
+    <br/>
+    <h4>Place another <a href="place_order">order</a></h4>
     <br/>
     <hr class="featurette-divider">
 
