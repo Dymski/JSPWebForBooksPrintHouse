@@ -82,36 +82,41 @@
 
         <h3 align="center">Create account</h3>
         <br/>
-        <form>
+
+        <form method="post" action="create_account">
             <div class="form-group">
-                <label for="emailSignIn">Email address</label>
-                <input type="email" class="form-control" id="emailSignIn" aria-describedby="emailHelp"
-                       placeholder="email@example.com">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                       placeholder="email@example.com" name="email">
                 <small id="emailHelp" class="form-text text-muted">Use the email address you used to register the
                     account.</small>
             </div>
             <div class="form-group">
-                <label for="passwordSignIn">Password</label>
-                <input type="password" class="form-control" id="passwordSignIn">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="companyName">Company name</label>
+                <input type="text" class="form-control" id="companyName" name="companyName">
             </div>
             <div class="form-group">
                 <label for="taxIdentificationNumber">Tax identification number</label>
-                <input type="text" class="form-control" id="taxIdentificationNumber">
+                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber">
             </div>
             <div class="form-group">
                 <label for="secretQuestion">Secret question</label>
-                <input type="text" class="form-control" id="secretQuestion">
+                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion">
             </div>
             <div class="form-group">
                 <label for="secretAnswer">Secret answer</label>
-                <input type="text" class="form-control" id="secretAnswer">
+                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="newsletterAgreement">
+                <input type="checkbox" class="form-check-input" id="newsletterAgreement" name="newsletterAgreement">
                 <label class="form-check-label" for="newsletterAgreement">Sign me for newsletter.</label>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary">Create account</button>
+            <input type="submit" value="Create account" class="btn btn-primary">
         </form>
     </div>
     <br/>

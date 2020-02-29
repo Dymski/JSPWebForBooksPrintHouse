@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
@@ -18,7 +19,7 @@ public class AccountEntity {
     @Column(name = "password")
     private String password;
     @Column(name = "creationDate")
-    private Date creationDate;
+    private LocalDateTime creationDate;
     @Column(name = "secretQuestion")
     private String secretQuestion;
     @Column(name = "secretAnswer")
@@ -27,13 +28,15 @@ public class AccountEntity {
     private String companyName;
     @Column(name = "TaxIdentificationNumber")
     private int taxIdentificationNumber;
+    @Column(name = "newsletterAgreement")
+    private String newsletterAgreement;
 
 
 
     public AccountEntity() {
     }
 
-    public AccountEntity(int accountID, String email, String password, Date creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber) {
+    public AccountEntity(int accountID, String email, String password, LocalDateTime creationDate, String secretQuestion, String secretAnswer, String companyName, int taxIdentificationNumber, String newsletterAgreement) {
         this.accountID = accountID;
         this.email = email;
         this.password = password;
@@ -42,6 +45,7 @@ public class AccountEntity {
         this.secretAnswer = secretAnswer;
         this.companyName = companyName;
         this.taxIdentificationNumber = taxIdentificationNumber;
+        this.newsletterAgreement = newsletterAgreement;
 
     }
 
@@ -77,11 +81,11 @@ public class AccountEntity {
         this.password = password;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -117,4 +121,11 @@ public class AccountEntity {
         this.taxIdentificationNumber = taxIdentificationNumber;
     }
 
+    public String getNewsletterAgreement() {
+        return newsletterAgreement;
+    }
+
+    public void setNewsletterAgreement(String newsletterAgreement) {
+        this.newsletterAgreement = newsletterAgreement;
+    }
 }
