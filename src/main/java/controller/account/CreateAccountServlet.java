@@ -1,11 +1,9 @@
-package controller.servlets;
+package controller.account;
 
-import model.AccountDAO;
+import controller.account.AccountDAO;
 import model.AccountEntity;
 import model.OrderEntity;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
@@ -15,9 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
-import java.time.LocalDateTime;
 
 @WebServlet(name = "CreateAccount", value = "/create_account")
 public class CreateAccountServlet extends HttpServlet {

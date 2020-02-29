@@ -1,5 +1,6 @@
-package model;
+package controller.account;
 
+import model.AccountEntity;
 import org.hibernate.SessionFactory;
 
 import javax.servlet.http.HttpServletRequest;

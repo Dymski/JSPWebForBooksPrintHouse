@@ -1,6 +1,6 @@
-package model;
+package controller.order;
 
-import org.hibernate.Session;
+import model.OrderEntity;
 import org.hibernate.SessionFactory;
 
 import javax.servlet.http.HttpServletRequest;

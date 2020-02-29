@@ -1,6 +1,7 @@
-package model;
+package controller.order;
 
 
+import model.OrderEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

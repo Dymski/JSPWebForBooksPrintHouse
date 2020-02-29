@@ -1,7 +1,7 @@
-package controller.servlets;
+package controller.order;
 
 import model.AccountEntity;
-import model.OrderDAO;
+import controller.order.OrderDAO;
 import model.OrderEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -31,7 +31,7 @@ public class PlaceOrderServlet extends HttpServlet {
             req.getRequestDispatcher("/place_order_success.jsp").forward(req, resp);
         }
         catch (Exception e){
-            req.getRequestDispatcher("/something_went_wrong.jsp").forward(req, resp);
+            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
         }
     }
 

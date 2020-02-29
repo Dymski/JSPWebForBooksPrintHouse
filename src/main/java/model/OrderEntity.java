@@ -1,5 +1,7 @@
 package model;
 
+import model.AccountEntity;
+
 import javax.persistence.*;
 
 @Entity
