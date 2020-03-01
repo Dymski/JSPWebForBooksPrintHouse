@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="../components/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -79,6 +79,9 @@
     <h2>You are not logged.</h2>
     <h3>Sign in <a href="sign_in">here!</a></h3>
     <h4>Otherwise, <a href="create_account">Create</a> your account.</h4>
+    <h2><%
+        out.print("Session id "+ session.getAttribute("id"));
+    %></h2>
     <br/>
     <hr class="featurette-divider">
 

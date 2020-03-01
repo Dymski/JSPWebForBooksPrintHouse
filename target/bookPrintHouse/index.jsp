@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -111,6 +112,10 @@
         Nowadays most texts are printed. Nevertheless, a lot of people became interested in the art of calligraphy, and
         it is undoubtedly a good tendency.</i></p>
 </div>
+
+
+<% if (Objects.isNull(session.getAttribute("id"))){
+    %>
 <br/>
 <div class="container" style="text-align: center">
     <h3>Sign in or create your account</h3>
@@ -120,11 +125,13 @@
 <div class="container" style="text-align-last: center">
     <a href="sign_in" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="text-align: center">Sign In</a>
     <a href="create_account" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" style="alignment: center">Create Account</a>
+</div>
+<%
+}%>
 
 
 <br/> <br/>
-    <hr class="featurette-divider">
-</div>
+<hr class="featurette-divider">
 <%@include file="/components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -83,4 +83,27 @@ public class AccountDAO implements AccountDaoInterface {
         }
 
     }
+
+    @Override
+    public AccountEntity getAccountIdBySessionAttribute(HttpServletRequest req, SessionFactory factory) {
+        Session session = factory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        AccountEntity accountEntity;
+
+        try {accountEntity = (AccountEntity)session.createQuery("select accountEntity from AccountEntity as accountEntity where accountEntity.accountID = :id")
+                    .setParameter("id", req.getSession().getAttribute("id"))
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            accountEntity = null;
+        }
+
+        transaction.commit();
+        session.close();
+        return accountEntity;
+
+    }
+
+
+
 }

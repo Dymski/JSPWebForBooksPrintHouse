@@ -1,7 +1,5 @@
 package model;
 
-import model.AccountEntity;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,50 +7,55 @@ import javax.persistence.*;
 public class OrderEntity {
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name="accountID", nullable=false)
+    @JoinColumn(name = "accountID", nullable = false)
     private AccountEntity accountEntity;
 
-
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderID;
-    @Column(name = "format")
-    private String format;
-    @Column(name = "pages")
-    private int pages;
+    @Column(name = "bookFormat")
+    private String bookFormat;
     @Column(name = "paperType")
     private String paperType;
     @Column(name = "numberOfCopies")
     private int numberOfCopies;
+    @Column(name = "blackAndWhitePages")
+    private int blackAndWhitePages;
+    @Column(name = "colorPages")
+    private int colorPages;
+    @Column(name = "invoice")
+    private String invoice;
+    @Column(name = "paymentCurrency")
+    private String paymentCurrency;
     @Column(name = "priceInPLN")
     private double priceInPLN;
-    @Column(name = "foreignCurrency")
-    private boolean foreignCurrency;                    //can boolean be used?
-    @Column(name = "currencyChosen")
-    private String currencyChosen;
+    @Column(name = "forexRate")
+    private double forexRate;
     @Column(name = "priceInForeignCurrency")
     private double priceInForeignCurrency;
-    @Column(name = "FvNumber")
-    private String FvNumber;
-    @Column(name = "FV")
-    private String FvPath;                              //ścieżka do pliku
+    @Column(name = "fvNumber")
+    private String fvNumber;
+    @Column(name = "fvPath")
+    private String fvPath;
 
-    public OrderEntity() {}
+    public OrderEntity() {
+    }
 
-    public OrderEntity(AccountEntity accountEntity, int orderID, String format, int pages, String paperType, int numberOfCopies, double priceInPLN, boolean foreignCurrency, String currencyChosen, double priceInForeignCurrency, String fvNumber, String FvPath) {
+    public OrderEntity(AccountEntity accountEntity, int orderID, String bookFormat, String paperType, int numberOfCopies, int blackAndWhitePages, int colorPages, String invoice, String paymentCurrency, double priceInPLN, double forexRate, double priceInForeignCurrency, String fvNumber, String fvPath) {
         this.accountEntity = accountEntity;
         this.orderID = orderID;
-        this.format = format;
-        this.pages = pages;
+        this.bookFormat = bookFormat;
         this.paperType = paperType;
         this.numberOfCopies = numberOfCopies;
+        this.blackAndWhitePages = blackAndWhitePages;
+        this.colorPages = colorPages;
+        this.invoice = invoice;
+        this.paymentCurrency = paymentCurrency;
         this.priceInPLN = priceInPLN;
-        this.foreignCurrency = foreignCurrency;
-        this.currencyChosen = currencyChosen;
+        this.forexRate = forexRate;
         this.priceInForeignCurrency = priceInForeignCurrency;
-        FvNumber = fvNumber;
-        this.FvPath = FvPath;
-
+        this.fvNumber = fvNumber;
+        this.fvPath = fvPath;
     }
 
     public AccountEntity getAccountEntity() {
@@ -71,20 +74,12 @@ public class OrderEntity {
         this.orderID = orderID;
     }
 
-    public String getFormat() {
-        return format;
+    public String getBookFormat() {
+        return bookFormat;
     }
 
-    public void setFormat(String format) {
-        this.format = format;
-    }
-
-    public int getPages() {
-        return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
+    public void setBookFormat(String bookFormat) {
+        this.bookFormat = bookFormat;
     }
 
     public String getPaperType() {
@@ -103,6 +98,38 @@ public class OrderEntity {
         this.numberOfCopies = numberOfCopies;
     }
 
+    public int getBlackAndWhitePages() {
+        return blackAndWhitePages;
+    }
+
+    public void setBlackAndWhitePages(int blackAndWhitePages) {
+        this.blackAndWhitePages = blackAndWhitePages;
+    }
+
+    public int getColorPages() {
+        return colorPages;
+    }
+
+    public void setColorPages(int colorPages) {
+        this.colorPages = colorPages;
+    }
+
+    public String getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(String invoice) {
+        this.invoice = invoice;
+    }
+
+    public String getPaymentCurrency() {
+        return paymentCurrency;
+    }
+
+    public void setPaymentCurrency(String paymentCurrency) {
+        this.paymentCurrency = paymentCurrency;
+    }
+
     public double getPriceInPLN() {
         return priceInPLN;
     }
@@ -111,20 +138,12 @@ public class OrderEntity {
         this.priceInPLN = priceInPLN;
     }
 
-    public boolean isForeignCurrency() {
-        return foreignCurrency;
+    public double getForexRate() {
+        return forexRate;
     }
 
-    public void setForeignCurrency(boolean foreignCurrency) {
-        this.foreignCurrency = foreignCurrency;
-    }
-
-    public String getCurrencyChosen() {
-        return currencyChosen;
-    }
-
-    public void setCurrencyChosen(String currencyChosen) {
-        this.currencyChosen = currencyChosen;
+    public void setForexRate(double forexRate) {
+        this.forexRate = forexRate;
     }
 
     public double getPriceInForeignCurrency() {
@@ -136,19 +155,18 @@ public class OrderEntity {
     }
 
     public String getFvNumber() {
-        return FvNumber;
+        return fvNumber;
     }
 
     public void setFvNumber(String fvNumber) {
-        FvNumber = fvNumber;
+        this.fvNumber = fvNumber;
     }
 
     public String getFvPath() {
-        return FvPath;
+        return fvPath;
     }
 
     public void setFvPath(String fvPath) {
-        FvPath = fvPath;
+        this.fvPath = fvPath;
     }
-
 }

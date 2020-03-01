@@ -16,18 +16,28 @@ public class OrderDAO implements OrderDaoInterfae {
         Transaction transaction = session.beginTransaction();
 
         OrderEntity orderEntity = new OrderEntity();
+        AccountDAO accountDAO = new AccountDAO();
 
-        System.out.println(req.getParameter("bookFormat"));
-        System.out.println(req.getParameter("paperType"));
-        System.out.println(Integer.parseInt(req.getParameter("numberOfCopies")));
-        System.out.println(Integer.parseInt(req.getParameter("blackAndWhitePages")));
-        System.out.println(Integer.parseInt(req.getParameter("colorPages")));
-        System.out.println(req.getParameter("Invoice"));
-        System.out.println(req.getParameter("PaymentCurrency"));
+        orderEntity.setAccountEntity(accountDAO.getAccountIdBySessionAttribute(req,factory));
 
 
-        transaction.commit();
+        orderEntity.setBookFormat(req.getParameter("bookFormat"));
+        orderEntity.setPaperType(req.getParameter("paperType"));
+        orderEntity.setNumberOfCopies(Integer.parseInt(req.getParameter("numberOfCopies")));
+        orderEntity.setBlackAndWhitePages(Integer.parseInt(req.getParameter("blackAndWhitePages")));
+        orderEntity.setColorPages(Integer.parseInt(req.getParameter("colorPages")));
+        orderEntity.setInvoice(req.getParameter("invoice"));
+        orderEntity.setPaymentCurrency(req.getParameter("paymentCurrency"));
+
+        System.out.println(req.getSession().getAttribute("id"));
+        System.out.println(accountDAO.getAccountIdBySessionAttribute(req,factory));
+        accountDAO.getAccountIdBySessionAttribute(req,factory).addOrderEntityToAccountEntity(orderEntity) ;
+
+        session.save(orderEntity);
         session.persist(orderEntity);
+        session.save(orderEntity);
+        session.persist(orderEntity);
+        transaction.commit();
         session.close();
     }
 

@@ -78,6 +78,7 @@
 
 <div class="container">
 
+    <h4><a href="log_out">Log out </a> if you wish to.</h4>
 
 </div>
 

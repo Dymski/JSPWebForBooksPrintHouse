@@ -28,13 +28,15 @@ public class CreateAccountServlet extends HttpServlet {
 
         AccountDAO accountDAO = new AccountDAO();
 
-        if (accountDAO.createAccountVerification(req,factory) != null){
-            req.getRequestDispatcher("/create_account_success.jsp").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("/create_account_failure.jsp").forward(req, resp);
+        try {
+            if (accountDAO.createAccountVerification(req, factory) != null) {
+                req.getRequestDispatcher("/create_account_success.jsp").forward(req, resp);
+            } else {
+                req.getRequestDispatcher("/create_account_failure.jsp").forward(req, resp);
+            }
+        } catch (Exception e) {
+            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
         }
-
-
 
     }
 
@@ -55,7 +57,6 @@ public class CreateAccountServlet extends HttpServlet {
     public void destroy() {
         super.destroy();
     }
-
 
 
 }

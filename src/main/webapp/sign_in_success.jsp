@@ -78,13 +78,12 @@
     <hr class="featurette-divider">
     <br/>
     <h2><%
-        String uname=request.getParameter("email");
-        out.print("Welcome "+ uname);
-        session.setAttribute("sessname",uname);
+        out.print("Welcome "+ session.getAttribute("email"));
     %></h2>
     <h2>Your sign in has been successful,</h2>
     <br/>
     <h3>You can now place an <a href="place_order">order.</a></h3>
+    <h3>or view your <a href="account">account.</a></h3>
     <br/>
     <hr class="featurette-divider">
 

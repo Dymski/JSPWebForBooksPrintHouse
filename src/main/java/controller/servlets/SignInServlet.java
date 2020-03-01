@@ -30,6 +30,8 @@ public class SignInServlet extends HttpServlet implements HttpSessionBindingList
         AccountEntity accountEntity = accountDAO.loginVerification(req, factory);
 
         if (accountEntity != null) {
+            req.getSession().setAttribute("id",accountEntity.getAccountID());
+            req.getSession().setAttribute("email",accountEntity.getEmail());
             req.getRequestDispatcher("/sign_in_success.jsp").forward(req, resp);
         } else {
             req.getRequestDispatcher("/sign_in_failure.jsp").forward(req, resp);

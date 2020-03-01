@@ -9,8 +9,8 @@ import java.util.*;
 @Table(name = "account_entity")
 public class AccountEntity implements HttpSessionBindingListener {
 
-    @OneToMany(mappedBy = "accountEntity", fetch = FetchType.LAZY)
-    private Set<OrderEntity> orderEntities = new HashSet<>();
+    @OneToMany(mappedBy = "accountEntity", fetch = FetchType.EAGER)
+    private List<OrderEntity> orderEntities = new LinkedList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,11 +50,11 @@ public class AccountEntity implements HttpSessionBindingListener {
 
     }
 
-    public Set<OrderEntity> getOrderEntities() {
+    public List<OrderEntity> getOrderEntities() {
         return orderEntities;
     }
 
-    public void setOrderEntities(Set<OrderEntity> orderEntities) {
+    public void setOrderEntities(LinkedList<OrderEntity> orderEntities) {
         this.orderEntities = orderEntities;
     }
 
@@ -129,4 +129,9 @@ public class AccountEntity implements HttpSessionBindingListener {
     public void setNewsletterAgreement(String newsletterAgreement) {
         this.newsletterAgreement = newsletterAgreement;
     }
+
+    public void addOrderEntityToAccountEntity(OrderEntity orderEntity){
+        orderEntities.add(orderEntity);
+    }
+
 }
