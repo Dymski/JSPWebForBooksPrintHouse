@@ -6,19 +6,19 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="images/carousel1.jpg" class="d-block w-100" alt="first slider">
+            <img src="${pageContext.request.contextPath}/a_images/carousel1.jpg" class="d-block w-100" alt="first slider">
             <div class="carousel-caption d-none d-md-block">
 
             </div>
         </div>
         <div class="carousel-item">
-            <img src="images/carousel2.jpg" class="d-block w-100" alt="second slider">
+            <img src="${pageContext.request.contextPath}/a_images/carousel2.jpg" class="d-block w-100" alt="second slider">
             <div class="carousel-caption d-none d-md-block">
 
             </div>
         </div>
         <div class="carousel-item">
-            <img src="images/carousel3.jpg" class="d-block w-100" alt="third slider">
+            <img src="${pageContext.request.contextPath}/a_images/carousel3.jpg" class="d-block w-100" alt="third slider">
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
