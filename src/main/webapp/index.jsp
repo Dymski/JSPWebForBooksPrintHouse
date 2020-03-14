@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -112,6 +113,9 @@
         it is undoubtedly a good tendency.</i></p>
 </div>
 <br/>
+<%
+    if (Objects.isNull(session.getAttribute("id"))){
+    %>
 <div class="container" style="text-align: center">
     <h3>Sign in or create your account</h3>
     <h4>If you wish to <a href="place_order">order book prints.</a></h4>
@@ -120,9 +124,11 @@
 <div class="container" style="text-align-last: center">
     <a href="sign_in" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="text-align: center">Sign In</a>
     <a href="create_account" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" style="alignment: center">Create Account</a>
+<%
+    }
+%>
 
-
-<br/> <br/>
+<br/>
     <hr class="featurette-divider">
 </div>
 <%@include file="/components/footer.jsp" %>
