@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -70,66 +70,20 @@
 
 </head>
 <body>
-<%@include file="components/navbar.jsp" %>
-<%@include file="components/carousel.jsp" %>
-<div class="container">
+<%@include file="../components/navbar.jsp" %>
+<%@include file="../components/carousel.jsp" %>
+<div class="container" style="text-align: center">
+    <br/>
+    <hr class="featurette-divider">
+    <br/>
+    <h3>Account has been created successfully.</h3>
+    <h4>Please <a href="sign_in">Sign In.</a></h4>
+
     <br/>
     <hr class="featurette-divider">
 
-    <div class="container form-group col-md-4">
-
-        <br/>
-
-        <h3 align="center">Create account</h3>
-        <br/>
-
-        <form method="post" action=""
-        oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                       placeholder="email@example.com" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="password2">Re-type password</label>
-                <input type="password" class="form-control" id="password2" name="password2" required>
-            </div>
-            <div class="form-group">
-                <label for="companyName">Company name</label>
-                <input type="text" class="form-control" id="companyName" name="companyName" required>
-            </div>
-            <div class="form-group">
-                <label for="taxIdentificationNumber">Tax identification number</label>
-                <input type="text" class="form-control" id="taxIdentificationNumber" name="taxIdentificationNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="secretQuestion">Secret question</label>
-                <input type="text" class="form-control" id="secretQuestion" name="secretQuestion" required>
-            </div>
-            <div class="form-group">
-                <label for="secretAnswer">Secret answer</label>
-                <input type="text" class="form-control" id="secretAnswer" name="secretAnswer" required>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="newsletterAgreement" name="newsletterAgreement">
-                <label class="form-check-label" for="newsletterAgreement">
-                    Sign me for newsletter!
-                </label>
-            </div>
-            <br/>
-            <input type="submit" value="Submit" class="btn btn-primary">
-        </form>
-    </div>
 </div>
-
-<br/>
-<hr class="container featurette-divider">
-<br/>
-<%@include file="components/footer.jsp" %>
+<%@include file="../components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
