@@ -4,6 +4,7 @@ model\AccountDaoInterface.class
 model\OrderDaoInterfae.class
 controller\PriceCalculator.class
 controller\servlets\AdminAccountViewServlet.class
+controller\NbpAPI.class
 controller\servlets\ServletFilterAlreadyLogged.class
 model\OrderEntity.class
 model\AccountDAO.class

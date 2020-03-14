@@ -11,4 +11,3 @@
         <a class="py-2 d-none d-md-inline-block my" href="account">Your Account</a>
     </div>
 </nav>
-a
