@@ -4,4 +4,32 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>notLogged</filter-name>
+    <filter-class>controller.servlets.ServletFilterNotLogged</filter-class>
+  </filter>
+  <filter>
+    <filter-name>alreadyLogged</filter-name>
+    <filter-class>controller.servlets.ServletFilterAlreadyLogged</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>notLogged</filter-name>
+    <url-pattern>/place_order</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>notLogged</filter-name>
+    <url-pattern>/account</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>alreadyLogged</filter-name>
+    <url-pattern>/sign_in</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>alreadyLogged</filter-name>
+    <url-pattern>/create_account</url-pattern>
+  </filter-mapping>
+
+
 </web-app>

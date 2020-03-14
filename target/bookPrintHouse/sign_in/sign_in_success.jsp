@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="../components/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="components/style.css" type="text/css" media="all">
     <!-- Responsive CSS -->
     <%--    <link rel="stylesheet" href="css/responsive.css">--%>
     <!-- Custom CSS -->
@@ -70,20 +70,25 @@
 
 </head>
 <body>
-<%@include file="../components/navbar.jsp" %>
-<%@include file="../components/carousel.jsp" %>
+
+<%@include file="components/navbar.jsp" %>
+<%@include file="components/carousel.jsp" %>
 <div class="container" style="text-align: center">
     <br/>
     <hr class="featurette-divider">
     <br/>
-    <h2>Sign in has been successful,</h2>
+    <h2><%
+        out.print("Welcome "+ session.getAttribute("email"));
+    %></h2>
+    <h2>Your sign in has been successful,</h2>
     <br/>
-    <h3>You can now place an <a href="../place_order">order.</a></h3>
+    <h3>You can now place an <a href="place_order">order.</a></h3>
+    <h3>or view your <a href="account">account.</a></h3>
     <br/>
     <hr class="featurette-divider">
 
 </div>
-<%@include file="../components/footer.jsp" %>
+<%@include file="components/footer.jsp" %>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
