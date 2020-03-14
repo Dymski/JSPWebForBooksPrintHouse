@@ -1,7 +1,6 @@
 package controller.order;
 
 import model.AccountEntity;
-import controller.order.OrderDAO;
 import model.OrderEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
