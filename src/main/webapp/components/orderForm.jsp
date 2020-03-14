@@ -35,15 +35,15 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="Invoice">Invoice</label>
-                <select id="Invoice" class="form-control" name="Invoice" required>
+                <label for="invoice">Invoice</label>
+                <select id="invoice" class="form-control" name="invoice" required>
                     <option selected>Yes</option>
                     <option>No</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="PaymentCurrency">Payment currecny</label>
-                <select id="PaymentCurrency" class="form-control" name="PaymentCurrency" required>
+                <label for="paymentCurrency">Payment currecny</label>
+                <select id="paymentCurrency" class="form-control" name="paymentCurrency" required>
                     <option selected>PLN</option>
                     <option>EUR</option>
                     <option>GBP</option>

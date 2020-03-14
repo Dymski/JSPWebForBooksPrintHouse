@@ -1,5 +1,6 @@
 package controller;
 
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -17,15 +18,14 @@ public class NbpAPI {
         httpClient.close();
     }
 
-    private String sendGet() throws Exception {
+    public String sendGet(String currency) throws Exception {
 
         String result;
-        HttpGet request = new HttpGet("http://api.nbp.pl/api/exchangerates/rates/a/gbp?format=json");
+        HttpGet request = new HttpGet("http://api.nbp.pl/api/exchangerates/rates/a/"+currency+"?format=json");
 
         try (CloseableHttpResponse response = httpClient.execute(request)) {
             HttpEntity entity = response.getEntity();
-//            Header headers = entity.getContentType();
-//            System.out.println(headers);
+            Header headers = entity.getContentType();
 
             if (Objects.nonNull(entity)) {
                 result = EntityUtils.toString(entity);

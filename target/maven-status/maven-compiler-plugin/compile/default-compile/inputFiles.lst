@@ -11,7 +11,6 @@ C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\Serv
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\SignInServlet.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\ServletFilterAlreadyLogged.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\model\AccountDaoInterface.java
-C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\PriceCalculator.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\model\OrderDAO.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\ClientAccountViewServlet.java
 C:\Users\Dell\IdeaProjects\bookPrintHouse\src\main\java\controller\servlets\CreateAccountServlet.java

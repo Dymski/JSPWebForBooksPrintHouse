@@ -2,7 +2,6 @@ controller\servlets\ClientAccountViewServlet.class
 controller\servlets\LogOutServlet.class
 model\AccountDaoInterface.class
 model\OrderDaoInterfae.class
-controller\PriceCalculator.class
 controller\servlets\AdminAccountViewServlet.class
 controller\NbpAPI.class
 controller\servlets\ServletFilterAlreadyLogged.class

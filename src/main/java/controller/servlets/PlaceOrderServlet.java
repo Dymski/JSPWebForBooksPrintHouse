@@ -29,12 +29,12 @@ public class PlaceOrderServlet extends HttpServlet implements HttpSessionBinding
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         OrderDAO orderDAO = new OrderDAO();
-//        try {
+        try {
         orderDAO.saveOrder(req, factory);
         req.getRequestDispatcher("/place_order_success.jsp").forward(req, resp);
-//        } catch (Exception e) {
-//            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
-//        }
+        } catch (Exception e) {
+            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
+        }
     }
 
     @Override
