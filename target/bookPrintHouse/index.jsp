@@ -124,6 +124,7 @@
 <div class="container" style="text-align-last: center">
     <a href="sign_in" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="text-align: center">Sign In</a>
     <a href="create_account" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" style="alignment: center">Create Account</a>
+    <br/>
 <%
     }
 %>

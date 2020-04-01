@@ -93,7 +93,7 @@
 
 
 <div class="container" align="center">
-<h4>Something went wrong... (^.-)</h4>
+<h4>Something went wrong...</h4>
 </div>
 
 

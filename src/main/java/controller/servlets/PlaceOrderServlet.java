@@ -33,7 +33,8 @@ public class PlaceOrderServlet extends HttpServlet implements HttpSessionBinding
         orderDAO.saveOrder(req, factory);
         req.getRequestDispatcher("/place_order_success.jsp").forward(req, resp);
         } catch (Exception e) {
-            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
+            e.printStackTrace();
+//            req.getRequestDispatcher("/something_went_wrong_view.jsp").forward(req, resp);
         }
     }
 

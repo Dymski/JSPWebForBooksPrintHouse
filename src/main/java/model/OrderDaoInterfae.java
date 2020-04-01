@@ -7,6 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface OrderDaoInterfae {
 
-    void saveOrder(HttpServletRequest req, SessionFactory factory);
+    void saveOrder(HttpServletRequest req, SessionFactory factory) throws Exception;
     OrderEntity listOrdersByEmail(String email);
 }
